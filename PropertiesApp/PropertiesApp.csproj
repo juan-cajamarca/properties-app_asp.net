@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdministratorLogin.aspx" />
+    <Content Include="AdministratorPanel.aspx" />
     <Content Include="App_Data\Properties.mdf" />
     <Content Include="App_Data\Properties_log.ldf">
       <DependentUpon>Properties.mdf</DependentUpon>
@@ -131,6 +132,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Home.aspx" />
+    <Content Include="ManageBills.aspx" />
+    <Content Include="ManageProperties.aspx" />
+    <Content Include="ManageStaff.aspx" />
+    <Content Include="PropertyDetails.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -160,6 +165,8 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="TenantDetails.aspx" />
+    <Content Include="TenantSignup.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -172,6 +179,13 @@
     </Compile>
     <Compile Include="AdministratorLogin.aspx.designer.cs">
       <DependentUpon>AdministratorLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministratorPanel.aspx.cs">
+      <DependentUpon>AdministratorPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministratorPanel.aspx.designer.cs">
+      <DependentUpon>AdministratorPanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -206,7 +220,35 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageBills.aspx.cs">
+      <DependentUpon>ManageBills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageBills.aspx.designer.cs">
+      <DependentUpon>ManageBills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageProperties.aspx.cs">
+      <DependentUpon>ManageProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageProperties.aspx.designer.cs">
+      <DependentUpon>ManageProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStaff.aspx.cs">
+      <DependentUpon>ManageStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageStaff.aspx.designer.cs">
+      <DependentUpon>ManageStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyDetails.aspx.cs">
+      <DependentUpon>PropertyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyDetails.aspx.designer.cs">
+      <DependentUpon>PropertyDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,6 +262,20 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TenantDetails.aspx.cs">
+      <DependentUpon>TenantDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TenantDetails.aspx.designer.cs">
+      <DependentUpon>TenantDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TenantSignup.aspx.cs">
+      <DependentUpon>TenantSignup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TenantSignup.aspx.designer.cs">
+      <DependentUpon>TenantSignup.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

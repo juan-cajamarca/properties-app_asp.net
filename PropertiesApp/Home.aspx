@@ -11,8 +11,8 @@
         <div>
             <h2>Welcome to Properties App!</h2>
             <p>Please, select your site</p>
-            <a href="#">Administrator login</a>
-            <a href="#">Tenant signup</a>
+            <a href="/AdministratorLogin">Administrator login</a>
+            <a href="/TenantSignup">Tenant signup</a>
             <a href="#">Payments portal for tenants</a>
             <a href="#">Accounting assistant login</a>
         </div>

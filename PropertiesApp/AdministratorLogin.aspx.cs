@@ -25,7 +25,7 @@ namespace PropertiesApp
 
                 if (password == "")
                 {
-                    Label1.Text = "No existen usuarios con el email ingresado.";
+                    Label1.Text = "There is not users with this email.";
                 }
                 else
                 {
@@ -34,7 +34,7 @@ namespace PropertiesApp
             }
             else
             {
-                Label1.Text = "Por favor, ingrese email y contraseña.";
+                Label1.Text = "Please, type email and password.";
             }
         }
 
@@ -44,7 +44,7 @@ namespace PropertiesApp
 
             SqlConnection vcon = new SqlConnection(ConfigurationManager.ConnectionStrings["PropertiesConnection"].ToString());
             vcon.Open();
-            SqlCommand cmd = new SqlCommand("SELECT password FROM [dbo].[Administrator] WHERE email = '" + TextBox1.Text + "';", vcon);
+            SqlCommand cmd = new SqlCommand("SELECT password FROM [dbo].[Administrator] WHERE email = '" + TextBox1.Text + "' AND superAdmin = 'Y';", vcon);
             realPassword = Convert.ToString(cmd.ExecuteScalar());
             vcon.Close();
             
@@ -55,11 +55,11 @@ namespace PropertiesApp
         {
             if (TextBox2.Text == password)
             {
-                Label1.Text = "¡Iniciaste sesión!";
+                Response.Redirect("AdministratorPanel");
             }
             else
             {
-                Label1.Text = "Contraseña incorrecta.";
+                Label1.Text = "Wrong password";
             }
         }
     }
