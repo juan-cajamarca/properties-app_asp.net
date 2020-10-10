@@ -5,63 +5,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Manage properties</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h3>Manage properties</h3>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/AdministratorPanel">&lt; Home</asp:HyperLink>
-            
+        <div class="container" style="margin-top: 5em;">
+            <h3 style="text-align: center;"><b>Manage properties</b></h3>
+            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-link" NavigateUrl="/AdministratorPanel">&lt; Home</asp:HyperLink>
+            <br /><br />
             <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="PropertiesDataSource">
                 <InsertItemTemplate>
                     Id:
-                    <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
+                    <asp:TextBox ID="IdTextBox" runat="server" CssClass="form-control" Text='<%# Bind("Id") %>' />
                     <br />
                     name:
-                    <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                    <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control" Text='<%# Bind("name") %>' />
                     <br />
                     address:
-                    <asp:TextBox ID="addressTextBox" runat="server" Text='<%# Bind("address") %>' />
+                    <asp:TextBox ID="addressTextBox" runat="server" CssClass="form-control" Text='<%# Bind("address") %>' />
                     <br />
                     zipCode:
-                    <asp:TextBox ID="zipCodeTextBox" runat="server" Text='<%# Bind("zipCode") %>' />
+                    <asp:TextBox ID="zipCodeTextBox" runat="server" CssClass="form-control" Text='<%# Bind("zipCode") %>' />
                     <br />
                     phone:
-                    <asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' />
+                    <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control" Text='<%# Bind("phone") %>' />
                     <br />
                     isLocal:
-                    <asp:TextBox ID="isLocalTextBox" runat="server" Text='<%# Bind("isLocal") %>' />
+                    <asp:TextBox ID="isLocalTextBox" runat="server" CssClass="form-control" Text='<%# Bind("isLocal") %>' />
                     <br />
                     isApartment:
-                    <asp:TextBox ID="isApartmentTextBox" runat="server" Text='<%# Bind("isApartment") %>' />
+                    <asp:TextBox ID="isApartmentTextBox" runat="server" CssClass="form-control" Text='<%# Bind("isApartment") %>' />
                     <br />
                     isBuilding:
-                    <asp:TextBox ID="isBuildingTextBox" runat="server" Text='<%# Bind("isBuilding") %>' />
+                    <asp:TextBox ID="isBuildingTextBox" runat="server" CssClass="form-control" Text='<%# Bind("isBuilding") %>' />
                     <br />
                     floor:
-                    <asp:TextBox ID="floorTextBox" runat="server" Text='<%# Bind("floor") %>' />
+                    <asp:TextBox ID="floorTextBox" runat="server" CssClass="form-control" Text='<%# Bind("floor") %>' />
                     <br />
                     number:
-                    <asp:TextBox ID="numberTextBox" runat="server" Text='<%# Bind("number") %>' />
+                    <asp:TextBox ID="numberTextBox" runat="server" CssClass="form-control" Text='<%# Bind("number") %>' />
                     <br />
                     additionalInfo:
-                    <asp:TextBox ID="additionalInfoTextBox" runat="server" Text='<%# Bind("additionalInfo") %>' />
+                    <asp:TextBox ID="additionalInfoTextBox" runat="server" CssClass="form-control" Text='<%# Bind("additionalInfo") %>' />
                     <br />
                     tenantId:
-                    <asp:TextBox ID="tenantIdTextBox" runat="server" Text='<%# Bind("tenantId") %>' />
+                    <asp:TextBox ID="tenantIdTextBox" runat="server" CssClass="form-control" Text='<%# Bind("tenantId") %>' />
                     <br />
                     propertyParentId:
-                    <asp:TextBox ID="propertyParentIdTextBox" runat="server" Text='<%# Bind("propertyParentId") %>' />
+                    <asp:TextBox ID="propertyParentIdTextBox" runat="server" CssClass="form-control" Text='<%# Bind("propertyParentId") %>' />
                     <br />
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                    <asp:LinkButton ID="InsertButton" runat="server" CssClass="btn btn-success" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CssClass="btn btn-danger" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New property" />
+                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CssClass="btn btn-success" CausesValidation="False" CommandName="New" Text="New property" />
                 </ItemTemplate>
             </asp:FormView>
-
-            <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="PropertiesDataSource">
+            <br />
+            <asp:GridView ID="GridView1" runat="server" CssClass="table" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="PropertiesDataSource">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
@@ -140,5 +141,8 @@
             </asp:SqlDataSource>
         </div>
     </form>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

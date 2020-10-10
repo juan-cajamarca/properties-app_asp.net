@@ -5,12 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Manage staff</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h3>Manage staff</h3>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/AdministratorPanel">&lt; Home</asp:HyperLink>
+        <div class="container" style="margin-top: 5em;">
+            <h3 style="text-align: center;"><b>Manage staff</b></h3>
+            <asp:HyperLink ID="HyperLink1" CssClass="btn btn-link" runat="server" NavigateUrl="/AdministratorPanel">&lt; Home</asp:HyperLink>
             <br /><br />
             <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="AdministratorsDataSource">
                 <EditItemTemplate>
@@ -37,32 +38,32 @@
                 </EditItemTemplate>
                 <InsertItemTemplate>
                     Id:
-                    <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
+                    <asp:TextBox ID="IdTextBox" CssClass="form-control" runat="server" TextMode="Number" Text='<%# Bind("Id") %>' />
                     <br />
                     name:
-                    <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                    <asp:TextBox ID="nameTextBox" CssClass="form-control" runat="server" Text='<%# Bind("name") %>' />
                     <br />
                     lastName:
-                    <asp:TextBox ID="lastNameTextBox" runat="server" Text='<%# Bind("lastName") %>' />
+                    <asp:TextBox ID="lastNameTextBox" CssClass="form-control" runat="server" Text='<%# Bind("lastName") %>' />
                     <br />
                     email:
-                    <asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' />
+                    <asp:TextBox ID="emailTextBox" CssClass="form-control" runat="server" TextMode="Email" Text='<%# Bind("email") %>' />
                     <br />
                     password:
-                    <asp:TextBox ID="passwordTextBox" runat="server" Text='<%# Bind("password") %>' />
+                    <asp:TextBox ID="passwordTextBox" CssClass="form-control" runat="server" TextMode="Password" Text='<%# Bind("password") %>' />
                     <br />
                     superAdmin:
-                    <asp:TextBox ID="superAdminTextBox" runat="server" Text='<%# Bind("superAdmin") %>' />
+                    <asp:TextBox ID="superAdminTextBox" CssClass="form-control" runat="server" Text='<%# Bind("superAdmin") %>' />
                     <br />
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                    <asp:LinkButton ID="InsertButton" runat="server" CssClass="btn btn-success" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CssClass="btn btn-danger" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New staff" />
+                    &nbsp;<asp:LinkButton ID="NewButton" CssClass="btn btn-success" runat="server" CausesValidation="False" CommandName="New" Text="New staff" />
                 </ItemTemplate>
             </asp:FormView>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="AdministratorsDataSource">
+            <asp:GridView ID="GridView1" CssClass="table" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="AdministratorsDataSource">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
@@ -106,5 +107,8 @@
             </asp:SqlDataSource>
         </div>
     </form>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

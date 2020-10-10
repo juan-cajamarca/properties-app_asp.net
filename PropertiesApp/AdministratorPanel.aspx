@@ -5,16 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Administrator Panel</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h3>Administrator Panel</h3>
-            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="/ManageStaff">Manage staff</asp:HyperLink>
+        <div class="container" style="margin-top: 5em;">
+            <h3 style="text-align: center;"><b>Administrator Panel</b></h3>
+            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-primary pull-right" NavigateUrl="/ManageStaff">Manage staff</asp:HyperLink>
             <br /><br />
-            <h5>Properties</h5>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/ManageProperties">Manage properties</asp:HyperLink>
-            <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="PropertiesListDataSource">
+            <h4><b>Properties</b></h4>
+            <asp:HyperLink ID="HyperLink1" CssClass="btn btn-primary" runat="server" NavigateUrl="/ManageProperties">Manage properties</asp:HyperLink>
+            <br />
+            <asp:ListView ID="ListView1" runat="server"  DataKeyNames="Id" DataSourceID="PropertiesListDataSource">
                 <AlternatingItemTemplate>
                     <tr style="">
                         <td>
@@ -212,7 +214,7 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                                <table id="itemPlaceholderContainer" class="table" runat="server" border="0" style="">
                                     <tr runat="server" style="">
                                         <th runat="server">Id</th>
                                         <th runat="server">name</th>
@@ -286,7 +288,7 @@
             <asp:SqlDataSource ID="PropertiesListDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PropertiesConnection %>" SelectCommand="SELECT * FROM [Property]"></asp:SqlDataSource>
             <br />
             <br />
-            <h5>Tenants</h5>
+            <h4><b>Tenants</b></h4>
             <asp:ListView ID="ListView2" runat="server" DataKeyNames="Id" DataSourceID="TenantsDataSource">
                 <AlternatingItemTemplate>
                     <tr style="">
@@ -449,7 +451,7 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                                <table id="itemPlaceholderContainer" class="table" runat="server" border="0" style="">
                                     <tr runat="server" style="">
                                         <th runat="server">Id</th>
                                         <th runat="server">dni</th>
@@ -511,8 +513,9 @@
             <asp:SqlDataSource ID="TenantsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PropertiesConnection %>" SelectCommand="SELECT * FROM [Tenant]"></asp:SqlDataSource>
             <br /><br />
 
-            <h5>Bills</h5>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="/ManageBills">ManageBills</asp:HyperLink>
+            <h4><b>Bills</b></h4>
+            <asp:HyperLink ID="HyperLink2" CssClass="btn btn-primary" runat="server" NavigateUrl="/ManageBills">ManageBills</asp:HyperLink>
+            <br />
             <asp:ListView ID="ListView3" runat="server" DataKeyNames="Id" DataSourceID="BillsDataSource">
                 <AlternatingItemTemplate>
                     <tr style="">
@@ -669,7 +672,7 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                                <table id="itemPlaceholderContainer" class="table" runat="server" border="0" style="">
                                     <tr runat="server" style="">
                                         <th runat="server">Id</th>
                                         <th runat="server">date</th>
@@ -729,7 +732,7 @@
             </asp:ListView>
             <asp:SqlDataSource ID="BillsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PropertiesConnection %>" SelectCommand="SELECT * FROM [Bill]"></asp:SqlDataSource>
             <br /><br />
-            <h5>Banking movements</h5>
+            <h4><b>Banking movements</b></h4>
             <asp:ListView ID="ListView4" runat="server" DataKeyNames="Id" DataSourceID="BankingMovementsDataSource">
                 <AlternatingItemTemplate>
                     <tr style="">
@@ -850,7 +853,7 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                                <table id="itemPlaceholderContainer" class="table" runat="server" border="0" style="">
                                     <tr runat="server" style="">
                                         <th runat="server">Id</th>
                                         <th runat="server">amount</th>
@@ -899,5 +902,8 @@
             <asp:SqlDataSource ID="BankingMovementsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PropertiesConnection %>" SelectCommand="SELECT * FROM [BankingMovement]"></asp:SqlDataSource>
         </div>
     </form>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

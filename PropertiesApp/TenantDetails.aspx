@@ -5,12 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Tenant details</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h3>Tenant details</h3>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/AdministratorPanel">&lt; Home</asp:HyperLink>
+        <div class="container">
+            <h3 style="text-align: center"><b>Tenant details</b></h3>
+            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-link" NavigateUrl="/AdministratorPanel">&lt; Home</asp:HyperLink>
             <br />
             <br />
             <div id="tenantData">
@@ -18,45 +19,46 @@
                 <asp:MultiView ID="MultiView1" runat="server">
                     <asp:View ID="View2" runat="server">
                         <asp:Label ID="Label1" runat="server" Text="Tenant identification:"></asp:Label>
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="Number"></asp:TextBox>
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Verify" />
-                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                        <br />
+                        <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" OnClick="Button1_Click" Text="Verify" />
+                        <asp:Label ID="Label2" runat="server" CssClass="alert alert-danger"></asp:Label>
                     </asp:View>
                     <asp:View ID="View1" runat="server">
-                        <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="TenantDataSource">
+                        <asp:FormView ID="FormView1" runat="server" CssClass="table" DataKeyNames="Id" DataSourceID="TenantDataSource">
                             <EditItemTemplate>
                                 Id:
-                                <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
+                                <asp:Label ID="IdLabel1" runat="server" CssClass="form-control" Text='<%# Eval("Id") %>' />
                                 <br />
                                 dni:
-                                <asp:TextBox ID="dniTextBox" runat="server" Text='<%# Bind("dni") %>' />
+                                <asp:TextBox ID="dniTextBox" runat="server" CssClass="form-control" Text='<%# Bind("dni") %>' />
                                 <br />
                                 name:
-                                <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                                <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control" Text='<%# Bind("name") %>' />
                                 <br />
                                 lastName:
-                                <asp:TextBox ID="lastNameTextBox" runat="server" Text='<%# Bind("lastName") %>' />
+                                <asp:TextBox ID="lastNameTextBox" runat="server" CssClass="form-control" Text='<%# Bind("lastName") %>' />
                                 <br />
                                 age:
-                                <asp:TextBox ID="ageTextBox" runat="server" Text='<%# Bind("age") %>' />
+                                <asp:TextBox ID="ageTextBox" runat="server" CssClass="form-control" Text='<%# Bind("age") %>' />
                                 <br />
                                 sex:
-                                <asp:TextBox ID="sexTextBox" runat="server" Text='<%# Bind("sex") %>' />
+                                <asp:TextBox ID="sexTextBox" runat="server" CssClass="form-control" Text='<%# Bind("sex") %>' />
                                 <br />
                                 address:
-                                <asp:TextBox ID="addressTextBox" runat="server" Text='<%# Bind("address") %>' />
+                                <asp:TextBox ID="addressTextBox" runat="server" CssClass="form-control" Text='<%# Bind("address") %>' />
                                 <br />
                                 phone:
-                                <asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' />
+                                <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control" Text='<%# Bind("phone") %>' />
                                 <br />
                                 email:
-                                <asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' />
+                                <asp:TextBox ID="emailTextBox" runat="server" CssClass="form-control" Text='<%# Bind("email") %>' />
                                 <br />
                                 jobDescription:
-                                <asp:TextBox ID="jobDescriptionTextBox" runat="server" Text='<%# Bind("jobDescription") %>' />
+                                <asp:TextBox ID="jobDescriptionTextBox" runat="server" CssClass="form-control" Text='<%# Bind("jobDescription") %>' />
                                 <br />
-                                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                <asp:LinkButton ID="UpdateButton" runat="server" CssClass="btn btn-primary" CausesValidation="True" CommandName="Update" Text="Update" />
+                                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CssClass="btn btn-danger" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                             </EditItemTemplate>
                             <InsertItemTemplate>
                                 Id:
@@ -122,9 +124,9 @@
                                 <br />
                                 jobDescription:
                                 <asp:Label ID="jobDescriptionLabel" runat="server" Text='<%# Bind("jobDescription") %>' />
-                                <br />
-                                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-                                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
+                                <br /><br />
+                                <asp:LinkButton ID="EditButton" runat="server" CssClass="btn btn-primary" CausesValidation="False" CommandName="Edit" Text="Edit" />
+                                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CssClass="btn btn-danger" CausesValidation="False" CommandName="Delete" Text="Delete" />
                             </ItemTemplate>
                         </asp:FormView>
                         <asp:SqlDataSource ID="TenantDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:PropertiesConnection %>" DeleteCommand="DELETE FROM [Tenant] WHERE [Id] = @original_Id AND [dni] = @original_dni AND [name] = @original_name AND [lastName] = @original_lastName AND [age] = @original_age AND [sex] = @original_sex AND [address] = @original_address AND [phone] = @original_phone AND [email] = @original_email AND [jobDescription] = @original_jobDescription" InsertCommand="INSERT INTO [Tenant] ([Id], [dni], [name], [lastName], [age], [sex], [address], [phone], [email], [jobDescription]) VALUES (@Id, @dni, @name, @lastName, @age, @sex, @address, @phone, @email, @jobDescription)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Tenant]" UpdateCommand="UPDATE [Tenant] SET [dni] = @dni, [name] = @name, [lastName] = @lastName, [age] = @age, [sex] = @sex, [address] = @address, [phone] = @phone, [email] = @email, [jobDescription] = @jobDescription WHERE [Id] = @original_Id AND [dni] = @original_dni AND [name] = @original_name AND [lastName] = @original_lastName AND [age] = @original_age AND [sex] = @original_sex AND [address] = @original_address AND [phone] = @original_phone AND [email] = @original_email AND [jobDescription] = @original_jobDescription">
@@ -175,8 +177,8 @@
                             </UpdateParameters>
                         </asp:SqlDataSource>
                         <br /><br />
-                        <h5>Tenant properties</h5>
-                        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="PropertiesDataSource">
+                        <h4><b>Tenant properties</b></h4>
+                        <asp:GridView ID="GridView1" runat="server" CssClass="table" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="PropertiesDataSource">
                             <Columns>
                                 <asp:CommandField ShowEditButton="True" />
                                 <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
@@ -261,5 +263,8 @@
             </div>
         </div>
     </form>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>
